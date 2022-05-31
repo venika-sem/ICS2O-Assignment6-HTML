@@ -1,0 +1,25 @@
+/* Created by: Venika Sem
+* Created on: Apr 2022
+* This file contains the CSS for index.html
+*/
+
+body {
+  padding: 10px;
+}
+
+h2 {
+  font: 60pt "Times New Roman", Times, serif;
+  font-weight: bold;
+  line-height: 20pt;
+}
+
+p {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.5rem;
+}
+
+h3 {
+  font: 15pt "Times New Roman", Times, serif;
+  font-weight: bold;
+  line-height: 16pt;
+}
