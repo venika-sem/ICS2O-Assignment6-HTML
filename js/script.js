@@ -17,7 +17,6 @@ if (navigator.serviceWorker) {
 /**
  * Get API info.
  */
-
 const getImage = async (URLAddress) => {
   try {
     const request = await fetch(URLAddress);
