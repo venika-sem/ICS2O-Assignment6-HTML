@@ -1,5 +1,5 @@
 /* Created by: Venika Sem
- * Created on: Apr 2022
+ * Created on: May 2022
  * This file contains the JS functions for index.html 
 */
 
@@ -9,21 +9,27 @@
  * Check servie worker.
  */
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/ICS2O-Unit6-01-PWA/sw.js", {
-    scope: "/ICS2O-Unit6-01-PWA/",
+  navigator.serviceWorker.register("/ICS2O-Assignment6-HTML/sw.js", {
+    scope: "/ICS2O-Assignment6-HTML/",
   })
 }
 
 /**
- * This function converts the temperature from fahrenheit to celsius.
+ * Get API info.
  */
-function convert() {
-  // input
-  const fahrenheitTemperature = parseFloat(document.getElementById('fahrenheit-temperature').value)
 
-   // process
-  const temperature = (fahrenheitTemperature - 32) * 5 / 9
-
-  // output
-  document.getElementById('temperature').innerHTML = '<p>The temperature in Celsius is: ' + temperature.toFixed(2) + ' °C</p>'
-}
+const getImage = async (URLAddress) => {
+  try {
+    const request = await fetch(URLAddress);
+    const jsonData = await request.json();
+    console.log(jsonData.image);
+    document.getElementById("api-image").innerHTML =
+      '<img src="' +
+      jsonData.image +
+      '" alt="Food image" class="center" width="40%" ' +
+      ">";
+  } catch (err) {
+    console.log(err);
+  }
+};
+getImage("https://foodish-api.herokuapp.com/api/");
